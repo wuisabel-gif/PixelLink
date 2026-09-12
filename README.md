@@ -21,6 +21,23 @@ The firmware uses the classic ESP32 pin layout, not the ESP32-C3 or S3 layout. S
 
 **The CC1101 uses 3.3 V power and logic. Do not connect it to 5 V.** Attach a suitable antenna before transmitting, and choose a frequency and operating conditions you are allowed to use in your location. No frequency is selected by default.
 
+## Parts and prices
+
+DigiKey US listed prices in USD, checked September 12, 2026. Quantities are for two nodes. This is a reference budget, not a ready-to-order kit: the ESP32 board was out of stock, and the M146 radio option needs different power and connector wiring from our generic CC1101 module.
+
+| Part | Qty | Unit price | Line total | Link |
+| --- | ---: | ---: | ---: | --- |
+| ESP32-DEVKITC-32E | 2 | $10.00 | $20.00 | [DigiKey](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32E/12091810) |
+| M5Stack M146 CC1101 board with antenna, alternative only | 2 | $10.95 | $21.90 | [DigiKey](https://www.digikey.com/en/products/detail/m5stack-technology-co-ltd/M146/28310339) |
+| Adafruit 592 USB-A to Micro-B data cable | 2 | $2.95 | $5.90 | [DigiKey](https://www.digikey.com/en/products/detail/adafruit-industries-llc/592/10669955) |
+| Adafruit 1950 female-to-female jumper wires, 20-pack | 1 | $1.95 | $1.95 | [DigiKey](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1950/6827084) |
+| Adafruit 1954 male-to-female jumper wires, 20-pack | 1 | $1.95 | $1.95 | [DigiKey](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1954/6827087) |
+| Optional: Adafruit 239 full-size breadboard | 2 | $5.95 | $11.90 | [DigiKey](https://www.digikey.com/en/products/detail/adafruit-industries-llc/239/7244929) |
+
+**Listed-parts subtotal: $51.70, or $63.60 with the optional breadboards.** Shipping, tax, tariffs, batteries, sensors, USB-C adapters, and any extra radio-adapter hardware are not included.
+
+Before buying the radio boards, read [the parts notes](docs/parts.md). The M146 is an 855 to 925 MHz M5Stack board with a 5 V board input, not the 3.3 V breakout used in our wiring guide. It is not a drop-in replacement or a 433 MHz option. Its power connection, DIP-switch routing, and antenna match need to be checked first. Do not apply 5 V to the CC1101 chip or its signal pins. No exact DigiKey listing for the documented generic breakout was verified.
+
 ## Getting started
 
 ### Build and flash the boards
@@ -145,5 +162,6 @@ It generates FSK waveforms, adds noise, and reconstructs an image from decoded p
 - `pixellink/telemetry_static/`: hardware dashboard
 - `pixellink/core.py`, `server.py`, and `static/`: image simulator
 - `docs/hardware.md`: wiring, flashing, and serial commands
+- `docs/parts.md`: prices, sourcing notes, and radio-board differences
 - `docs/protocol.md`: radio packet and USB message formats
 - `tests/`: automated tests and shared packet fixtures
