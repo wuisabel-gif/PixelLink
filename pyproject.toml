@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pixellink-lab"
+version = "1.0.0"
+description = "Read-only ESP32 + CC1101 telemetry dashboard with a separate FSK image simulator"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26,<3", "Pillow>=10.4,<13"]
+
+[project.optional-dependencies]
+hardware = ["pyserial==3.5"]
+pluto = ["pyadi-iio>=0.0.17,<1"]
+
+[project.scripts]
+pixellink = "pixellink.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["pixellink*"]
+
+[tool.setuptools.package-data]
+pixellink = ["static/*.html", "static/*.css", "static/*.js", "telemetry_static/*.html", "telemetry_static/*.css", "telemetry_static/*.js"]

@@ -1,0 +1,14 @@
+include README.md
+include .gitignore
+recursive-include pixellink/static *.html *.css *.js
+recursive-include pixellink/telemetry_static *.html *.css *.js
+recursive-include tests *.py *.cjs *.cpp *.h
+recursive-include tests/fixtures *.json
+recursive-include docs *.md
+recursive-include firmware *.ini *.cpp *.h *.md *.json *.py
+include firmware/.gitignore
+prune firmware/.pio
+prune .venv
+prune build
+prune dist
+global-exclude __pycache__ *.py[cod] .DS_Store

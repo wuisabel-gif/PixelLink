@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+received.png
+imported.png
+*.iq
+*.iq.json
+*.c64
+*.c64.json
+*.jsonl
+.pio/
+.DS_Store

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "uptime-only",
+    "flags": 0,
+    "node_id": 1,
+    "boot_id": 305419896,
+    "sequence": 0,
+    "uptime_ms": 123456,
+    "adc_raw": 65535,
+    "frame_hex": "50584c5401000100785634120000000040e20100ffff0000f6834686"
+  },
+  {
+    "name": "adc-valid",
+    "flags": 1,
+    "node_id": 42,
+    "boot_id": 2309737967,
+    "sequence": 7,
+    "uptime_ms": 3000,
+    "adc_raw": 2048,
+    "frame_hex": "50584c5401012a00efcdab8907000000b80b00000008000046c40a49"
+  },
+  {
+    "name": "wrap-boundary",
+    "flags": 1,
+    "node_id": 65535,
+    "boot_id": 4294967295,
+    "sequence": 4294967295,
+    "uptime_ms": 4294967295,
+    "adc_raw": 4095,
+    "frame_hex": "50584c540101ffffffffffffffffffffffffffffff0f000002e98e9f"
+  }
+]
